@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Color x:Key="HighlightDarkColor">#FFD85050</Color>
+  <Color x:Key="HighlightLightColor">#FFD85050</Color>
+  <Color x:Key="AccentColor">#FFD85050</Color>
+  <Color x:Key="AccentColor2">#99D85050</Color>
+  <Color x:Key="AccentColor3">#66D85050</Color>
+  <Color x:Key="AccentColor4">#33D85050</Color>
+  <LinearGradientBrush x:Key="BrandingBrush" EndPoint="0.001,0.5" StartPoint="1.002,0.5">
+    <GradientStop Color="{DynamicResource HighlightDarkColor}" Offset="0" />
+    <GradientStop Color="#FFFFB519" Offset="1" />
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="AccentColorBrush" Color="{DynamicResource AccentColor}" />
+  <!-- accent color on top of the tab -->
+  <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor3" Color="{DynamicResource HighlightLightColor}" />
+  <!-- accent color on top of the tab for mouse over -->
+  <SolidColorBrush x:Key="AvalonDock_ThemeMetro_BaseColor4" Color="{DynamicResource AccentColor3}" />
+
+</ResourceDictionary>

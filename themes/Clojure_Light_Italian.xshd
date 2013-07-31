@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Clojure" extensions=".clj" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+    <!-- <Color name="Green" foreground="#FF00911F"/> -->
+    <!-- <Color name="Blue" foreground="#FF3139F8"/> -->
+    <!-- <Color name="LightBlue" foreground="#FF88BDF8"/> -->
+
+    <!-- <Color name="Gray" foreground="#FF202020"/> -->
+    <!-- <Color name="Purple" foreground="#FF9628A6"/> -->
+    <!-- <Color name="Yellow" foreground="#FFF2DB8C"/> -->
+    <!-- <Color name="LightRed" foreground="#FFF58787"/> -->
+    <!-- <Color name="Red" foreground="#FFF5173A"/> -->
+
+  <Color name="Comment"      foreground="#FF808080"  exampleText="; comment"/>
+  <Color name="CommentForm"  foreground="#FF808080"  exampleText="#_(some-form arg1 arg2)"/>
+  <Color name="Punctuation"  foreground="#FF808080"  exampleText="(let [inst (MyClass. arg)])" fontWeight="bold" />
+  <Color name="Boolean"      foreground="#FF88BDF8"  fontWeight="bold"/>
+  <Color name="Constant"     foreground="#FF88BDF8" fontWeight="bold"/>
+  <Color name="Special"      foreground="#FFF5173A" fontWeight="bold"/>
+  <Color name="Exception"    foreground="#FFF5173A" fontWeight="bold"/>
+  <Color name="Cond"         foreground="#FFF5173A" fontWeight="bold"/>
+  <Color name="Repeat"       foreground="#FFF5173A" fontWeight="bold"/>
+  <Color name="Define"       foreground="#FFF5173A" fontWeight="bold"/> 
+  <Color name="Macro"        foreground="#FFF5173A" fontWeight="bold"/>
+  <Color name="String"       foreground="#FFF5173A" fontWeight="bold"/>
+  <Color name="CLRInterop"   foreground="#FF3139F8"  fontWeight="bold"/>
+  <Color name="Namespace"       foreground="#FF3139F8" fontWeight="bold"/>
+  <Color name="MethodDef"       foreground="#FF248777" fontWeight="bold"/>
+  <Color name="Keyword" foreground="#FF00911F" fontWeight="bold"/>
+  
+  <RuleSet>
+    <Import ruleSet="Expression"/>
+  </RuleSet>
+
+    <RuleSet name="Expression">
+    <Keywords color="Macro">
+        <Word>->></Word>
+        <Word>-></Word>
+        <Word>..</Word>
+        <Word>amap</Word>
+        <Word>and</Word>
+        <Word>areduce</Word>
+        <Word>as-></Word>
+        <Word>assert</Word>
+        <Word>binding</Word>
+        <Word>bound-fn</Word>
+        <Word>clojure.core/-></Word>
+        <Word>clojure.core/->></Word>
+        <Word>clojure.core/..</Word>
+        <Word>clojure.core/amap</Word>
+        <Word>clojure.core/and</Word>
+        <Word>clojure.core/areduce</Word>
+        <Word>clojure.core/as-></Word>
+        <Word>clojure.core/assert</Word>
+        <Word>clojure.core/binding</Word>
+        <Word>clojure.core/bound-fn</Word>
+        <Word>clojure.core/comment</Word>
+        <Word>clojure.core/declare</Word>
+        <Word>clojure.core/delay</Word>
+        <Word>clojure.core/import</Word>
+        <Word>clojure.core/require</Word>
+        <Word>import</Word>
+        <Word>require</Word>
+    </Keywords>
+
+    <Rule color="Keyword">
+	\:
+        [\d\w_\-\!\?]+  # followed by an identifier
+    </Rule>
+      <!-- <Rule color="Punctuation"> -->
+      <!--   [;()\[\]{}+\\\-/%*&lt;&gt;^+~!|&amp;]+ -->
+      <!-- </Rule> -->
+      <Rule color="Punctuation">
+        [()\[\]{}+\\\/]+
+      </Rule>
+      <Span color="Comment" multiline="false">
+        <Begin>;</Begin>
+      </Span>
+      <Span color="Comment" multiline="true" >
+        <Begin>\(comment</Begin>
+        <End>\)</End>
+      </Span>
+      
+      <!-- <Span ruleSet="Expression" multiline="true" > -->
+      <!--   <Begin fontWeight="bold">\(</Begin> -->
+      <!--   <End fontWeight="bold">\)</End> -->
+      <!-- </Span> -->
+
+      <Span color="String">
+        <Begin>"</Begin>
+	<End>"</End>
+      </Span>
+
+    <Span color="CommentForm" ruleSet="Expression" multiline="true">
+      <Begin fontWeight="bold">\#_\(</Begin>
+      <End fontWeight="bold">\)</End>
+    </Span>
+
+    <Keywords color="Constant">
+      <Word>nil</Word>
+    </Keywords>
+
+    <Keywords color="Boolean">
+      <Word>true</Word>
+      <Word>false</Word>
+    </Keywords>
+
+    <Keywords color="Special">
+      <Word>.</Word>
+      <Word>catch</Word>
+      <Word>clojure.core/fn</Word>
+      <Word>clojure.core/let</Word>
+      <Word>clojure.core/loop</Word>
+      <Word>def</Word>
+      <Word>do</Word>
+      <Word>finally</Word>
+      <Word>fn</Word>
+      <Word>if</Word>
+      <Word>let</Word>
+      <Word>loop</Word>
+      <Word>monitor</Word>
+      <Word>monitor-enter</Word>
+      <Word>monitor-exit</Word>
+      <Word>new</Word>
+      <Word>quote</Word>
+      <Word>recur</Word>
+      <Word>set!</Word>
+      <Word>throw</Word>
+      <Word>try</Word>
+      <Word>var</Word>
+  </Keywords>
+
+  <Keywords color="Exception">
+      <Word>catch</Word>
+      <Word>finally</Word>
+      <Word>throw</Word>
+      <Word>try</Word>
+  </Keywords>
+
+    <Keywords color="Cond">
+        <Word>case</Word>
+        <Word>clojure.core/case</Word>
+        <Word>clojure.core/cond</Word>
+        <Word>clojure.core/cond-></Word>
+        <Word>clojure.core/cond->></Word>
+        <Word>clojure.core/condp</Word>
+        <Word>clojure.core/if-let</Word>
+        <Word>clojure.core/if-not</Word>
+        <Word>clojure.core/when</Word>
+        <Word>clojure.core/when-first</Word>
+        <Word>clojure.core/when-let</Word>
+        <Word>clojure.core/when-not</Word>
+        <Word>case</Word>
+        <Word>cond</Word>
+        <Word>cond-></Word>
+        <Word>cond->></Word>
+        <Word>condp</Word>
+        <Word>if-let</Word>
+        <Word>if-not</Word>
+        <Word>when</Word>
+        <Word>when-first</Word>
+        <Word>when-let</Word>
+        <Word>when-not</Word>
+    </Keywords>
+
+    <Keywords color="Repeat">
+        <Word>clojure.core/doall</Word>
+        <Word>clojure.core/dorun</Word>
+        <Word>clojure.core/doseq</Word>
+        <Word>clojure.core/dotimes</Word>
+        <Word>clojure.core/while</Word>
+        <Word>doall</Word>
+        <Word>dorun</Word>
+        <Word>doseq</Word>
+        <Word>dotimes</Word>
+        <Word>while</Word>
+    </Keywords>
+
+    <Keywords color="Define">
+        <Word>clojure.core/definline</Word>
+        <Word>clojure.core/definterace</Word>
+        <Word>clojure.core/defmacro</Word>
+        <Word>clojure.core/defmethod</Word>
+        <Word>clojure.core/defmulti</Word>
+        <Word>clojure.core/defn</Word>
+        <Word>clojure.core/defn-</Word>
+        <Word>clojure.core/defonce</Word>
+        <Word>clojure.core/defprotocol</Word>
+        <Word>clojure.core/defrecord</Word>
+        <Word>clojure.core/defstruct</Word>
+        <Word>clojure.core/deftype</Word>
+      <Word>definline</Word>
+      <Word>definterace</Word>
+      <Word>defmacro</Word>
+      <Word>defmethod</Word>
+      <Word>defmulti</Word>
+      <Word>defn</Word>
+      <Word>defn-</Word>
+      <Word>defonce</Word>
+      <Word>defprotocol</Word>
+      <Word>defrecord</Word>
+      <Word>defstruct</Word>
+      <Word>deftype</Word>
+    </Keywords> 
+    <Rule color="MethodDef">
+	(\(defn\s*) # (defn followed by whitespace
+        [\d\w_\-\!\?]+  # and an identifier
+    </Rule>
+
+    <Keywords color="CLRInterop">
+        <Word>assembly-load-with-partial-name</Word>
+        <Word>assembly-load-from</Word>
+    </Keywords>
+
+    <Keywords color="Namespace">
+        <Word>ns</Word>
+    </Keywords>
+  </RuleSet>
+
+</SyntaxDefinition>
