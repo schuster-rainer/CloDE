@@ -21,8 +21,8 @@
    ; "ClojureWpf/ClojureWpf/bin/Debug/ClojureWpf.dll"
    ; (str awesomium-sdk "1.7.0.5/wrappers/Awesomium.NET/Assemblies/Awesomium.Windows.Controls.dll")
    "Clode.Extensions/Clode.Extensions/bin/Debug/Clode.Extensions.dll"
-   (str d/*package-path* "ILSpy/Mono.Cecil.dll")
-   (str d/*package-path* "ILSpy/ICSharpCode.Decompiler.dll")
+   ; (str d/*package-path* "ILSpy/Mono.Cecil.dll")
+   ; (str d/*package-path* "ILSpy/ICSharpCode.Decompiler.dll")
    ; TODO: upgrade to new versions and use dependencies.clj or even better
    ; nLeiningen with project.clj
    (str d/*package-path* "log4net.2.0.0/lib/net40-full/log4net.dll") 

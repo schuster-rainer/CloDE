@@ -1,12 +1,14 @@
 # CloDE
 
+ClojureCLR Development Environment (currently running on .NET 4.0)
+
 ## Introduction
 
-This is a very early alpha version I created some month ago and since then never touched. Basically not munch of an architecture. I'm getting used to clojure ... My goald is to write all code in clojure to be easily modified atm runtime from the system REPL. Perhaps with some sort of custom *.cs project compilation, either by using Roslyn or by just calling into csc.exe or MONOs mcs.exe. Atm. there is some pain related to Generics. As I'm getting more used to Clojure-CLR. I'm replacing the code from Clode.Extensions with clojure code. There are no graphical commands in the GUI right now. Only some very few from the REPL (no file saving atm.)
+This is a very early alpha version I created some month ago and since then never touched. Basically not munch of an architecture. I'm getting used to clojure ... My goal is to write all code in clojure to be easily modified at runtime from the system REPL. Perhaps with some sort of custom *.cs project compilation, either by using Roslyn or by just calling into csc.exe or MONOs mcs.exe. Atm. there is some pain related to Generics. As I'm getting more used to Clojure-CLR I'll start replacing the code from Clode.Extensions with clojure code. There are no graphical commands in the GUI right now. Only some very few from the REPL (no file saving)
 
 ## Basic Concept
 
-CloDE loads its contents (views, controls, themes) from xaml dynamically (with all related quirks). Its dived into modules with an init function being called from clode.clj. So it's a monolythic approach right now until I have the basic features working as I want them to be.
+CloDE loads its contents (views, controls, themes) from xaml dynamically (with all related quirks). It's dived into modules with an init function being called from clode.clj. So it's a monolythic approach right now until I have the basic features working as I want them to be.
 
 ## Features
 
@@ -34,7 +36,7 @@ nleiningen basically works, but I decided to stick to the dependencies.clj right
 ### Preparation 
 
 1. Installing the Expression SDK 
-2. Compile Clode.Extensions
+2. Compile Clode.Extensions (enable NuGet Package Restore on the Solution, before compiling)
 3. Clojure.Main.exe -m dependencies
 
 ## Running
